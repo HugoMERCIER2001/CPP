@@ -1,8 +1,9 @@
 #include "Particule.h"
+#include "Vecteur.h"
 #include <iostream>
 
-// Constructeurns
-Particule::Particule(Vecteur position, Vecteur vitesse, double masse, int identifiant, const std::string categorie, Vecteur force) :
+// Constructeur
+Particule::Particule(Vecteur position, Vecteur vitesse, double masse, int identifiant, std::string categorie, Vecteur force) :
     position(position), vitesse(vitesse), masse(masse), identifiant(identifiant), categorie(categorie), force(force) {}
 
 // Méthodes d'accès aux propriétés
@@ -35,8 +36,15 @@ void Particule::display() const {
     std::cout << "Position: (" << position.getX() << ", " << position.getY() << ", " << position.getZ() << ")" << std::endl;
     std::cout << "Vitesse: (" << vitesse.getX() << ", " << vitesse.getY() << ", " << vitesse.getZ() << ")" << std::endl;
     std::cout << "Masse: " << masse << std::endl;
-    std::cout << "Catégorie: " << categorie << std::endl; std::cout << "Vitesse: " << vitesse << std::endl;
+    std::cout << "Catégorie: " << categorie << std::endl;
     std::cout << "Force: (" << force.getX() << ", " << force.getY() << ", " << force.getZ() << ")" << std::endl;
+}
+
+bool Particule::operator<(const Particule& other) const {
+    // Implémentez la logique de comparaison ici
+    // Par exemple, comparez les attributs de Particule
+    // et retournez true si la particule courante est inférieure à l'autre.
+    return identifiant < other.identifiant;
 }
 
 // Mise à jour de la force
