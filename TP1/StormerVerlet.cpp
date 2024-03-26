@@ -3,6 +3,11 @@
 #include "StormerVerlet.h"
 #include <iostream>
 #include <vector>
+#include <cmath>
+
+//Constructeur d'un objet de type Stormer Verlet
+StormerVerlet::StormerVerlet(std::vector<Particule> particules) : particules(particules) {}
+
 
 // Définir une fonction pour calculer la force entre deux particules
 Vecteur StormerVerlet::calculerForce(const Particule& particule1, const Particule& particule2) {
@@ -13,7 +18,7 @@ Vecteur StormerVerlet::calculerForce(const Particule& particule1, const Particul
     return r*(forceMagnitude / r.norme());
 }
 // Méthode pour calculer les forces sur une particule spécifique et mettre à jour sa force
-void StormerVerlet::calculerForcesSurParticule(Particule& particule){
+Vecteur StormerVerlet::calculerForcesSurParticule(Particule& particule){
     for (const Particule& autreParticule : particules) {
         if (autreParticule.getIdentifiant() != particule.getIdentifiant()) {
             particule.updateForce((particule.getForce())+(calculerForce(particule, autreParticule)));
@@ -36,59 +41,11 @@ void StormerVerlet::updateParticule(Particule& particule, double deltaTime){
     particule.updateVitesse(nouvelleVitesse);
 }
 
-void StormerVerlet::stormerVerlet(double t_end, double deltaTime){
-
-    std::cout << "\n QUESTION 5 \n" << std::endl;
-    //On initialise la particuleList
-    std::list<Particule> particuleList;
-    //On a ajoute le Soleil dans la liste
-    double x = 0;
-    double y = 0;
-    double z = 0;
-    Vecteur position = Vecteur(x, y, z);
-    double vx = 0;
-    double vy = 0;
-    double vz = 0;
-    Vecteur vitesse = Vecteur(vx, vy, vz);
-    double fx = 0;
-    double fy = 0;
-    double fz = 0;
-    Vecteur force = Vecteur(fx, fy, fz);
-    double mass = 1;
-    std::string category = "Soleil";
-    particuleList.emplace_back(position, vitesse, mass, 0, category, force);
-
-    //On a ajoute la Terre dans la liste
-    double y_Terre = 1;
-    Vecteur position_Terre = Vecteur(0, y_Terre, 0);
-    double vx_Terre  = -1;
-    Vecteur vitesse_Terre = Vecteur(vx_Terre, 0, 0);
-    double mass_Terre = 3 * pow(10, -6);
-    std::string category_Terre = "Terre";
-    particuleList.emplace_back(position_Terre, vitesse_Terre, mass_Terre, 1, category_Terre, force);
-
-    //On a ajoute Jupiter dans la liste
-    double y_Jupiter = 5.36;
-    Vecteur position_Jupiter = Vecteur(0, y_Jupiter, 0);
-    double vx_Jupiter = -0.425;
-    Vecteur vitesse_Jupiter = Vecteur(vx_Jupiter, 0, 0);
-    double mass_Jupiter = 9.55 * pow(10, -4);
-    std::string category_Jupiter = "Jupiter";
-    particuleList.emplace_back(position_Jupiter, vitesse_Jupiter, mass_Jupiter, 2, category_Jupiter, force);
-
-    //On a ajoute la comète de Hailey dans la liste
-    double x_Hailey = 34.75;
-    Vecteur position_Hailey = Vecteur(x_Hailey, 0, 0);
-    double vy_Hailey = 0.0296;
-    Vecteur vitesse_Hailey = Vecteur(0, vy_Hailey, 0);
-    double mass_Hailey = pow(10, -14);
-    std::string category_Hailey = "Hailey";
-    particuleList.emplace_back(position_Hailey, vitesse_Hailey, mass_Hailey, 3, category_Hailey, force);
-
+void StormerVerlet::stormerVerlet_execution(double t_end, double deltaTime){
     double temps = 0.0;
     while (temps < t_end) {
         temps += deltaTime;
-        for (const Particule& autreParticule : particules) {
+        for (Particule& autreParticule : particules) {
             updateParticule(autreParticule,deltaTime);
         }
         // Affichage des quantités t, x, y pour chaque particule

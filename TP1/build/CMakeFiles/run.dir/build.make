@@ -66,7 +66,7 @@ include CMakeFiles/run.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run.dir/progress.make
 
-CMakeFiles/run: CollectionParticule
+CMakeFiles/run: ../CollectionParticule
 	./CollectionParticule 16 32 64 128 256 512 1024 2048 4096 > réponses.txt
 
 run: CMakeFiles/run

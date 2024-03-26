@@ -66,8 +66,8 @@ include CMakeFiles/run2.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run2.dir/progress.make
 
-CMakeFiles/run2: Stromer_Verlet
-	./Stromer_Verlet > question5.txt
+CMakeFiles/run2: ../StormerVerlet.h
+	./executeStormerVerlet > réponses2.txt
 
 run2: CMakeFiles/run2
 run2: CMakeFiles/run2.dir/build.make

@@ -1,4 +1,5 @@
 #include "Vecteur.h"
+#include "math.h"
 
 Vecteur::Vecteur(double X, double Y, double Z): x(X), y(Y), z(Z) {}
 
