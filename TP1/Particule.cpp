@@ -40,14 +40,22 @@ void Particule::display() const {
     std::cout << "Force: (" << force.getX() << ", " << force.getY() << ", " << force.getZ() << ")" << std::endl;
 }
 
-void Particule::display_short() const {
-    std::cout << categorie << ": ("<< position.getX() << ", " << position.getY() << ")\n" << std::endl;
-}
-
 bool Particule::operator<(const Particule& other) const {
+    // Implémentez la logique de comparaison ici
+    // Par exemple, comparez les attributs de Particule
+    // et retournez true si la particule courante est inférieure à l'autre.
     return identifiant < other.identifiant;
 }
 
+// Mise à jour de la position
+void Particule::updatePosition(const Vecteur& newPosition) {
+    position = newPosition;
+}
+
+// Mise à jour de la vitesse
+void Particule::updateVitesse(const Vecteur& newVitesse) {
+    vitesse = newVitesse;
+}
 // Mise à jour de la force
 void Particule::updateForce(const Vecteur newForce) {
     force = newForce;

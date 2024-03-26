@@ -11,11 +11,21 @@ class Vecteur{
         double getX() const;
         double getY() const;
         double getZ() const;
+        // Vecteur& operator+=(const Vecteur& autre) { x += autre.x; return *this; }
+        Vecteur operator+(const Vecteur& autre) const;
+        Vecteur operator-(const Vecteur& autre) const;
+        Vecteur operator*(const Vecteur& autre) const ;
+        Vecteur operator*(double scalaire) const;
+        Vecteur operator/(const Vecteur& autre) const ;
+        Vecteur operator/(double scalaire) const;
+        double  norme() const;
+        
 
     private:
         double x;
         double y;
         double z;
 };
+
 
 #endif /* VECTEUR_H */
