@@ -40,10 +40,11 @@ void Particule::display() const {
     std::cout << "Force: (" << force.getX() << ", " << force.getY() << ", " << force.getZ() << ")" << std::endl;
 }
 
+void Particule::display_short() const {
+    std::cout << categorie << ": ("<< position.getX() << ", " << position.getY() << ")\n" << std::endl;
+}
+
 bool Particule::operator<(const Particule& other) const {
-    // Implémentez la logique de comparaison ici
-    // Par exemple, comparez les attributs de Particule
-    // et retournez true si la particule courante est inférieure à l'autre.
     return identifiant < other.identifiant;
 }
 

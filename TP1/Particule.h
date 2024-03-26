@@ -1,4 +1,8 @@
 //particule.h
+#ifndef PARTICULE_H  
+#define PARTICULE_H
+
+
 
 #include <string>
 #include "Vecteur.h"
@@ -17,6 +21,7 @@ class Particule {
     Vecteur getForce() const;
     void updateForce(const Vecteur newForce);
     void display() const;
+    void display_short() const;
     bool operator<(const Particule& other) const;
 
 private:
@@ -28,3 +33,4 @@ private:
     std::string categorie;
     Vecteur force;
 };
+#endif  //PARTICULE_H

@@ -1,0 +1,97 @@
+ 
+ QUESTION 3 
+
+TESTS LISTE : 
+On test pour 16 particules elapsed time: 4.9276e-05s
+
+On test pour 32 particules elapsed time: 6.3133e-05s
+
+On test pour 64 particules elapsed time: 0.000103585s
+
+On test pour 128 particules elapsed time: 0.000231683s
+
+On test pour 256 particules elapsed time: 0.000466867s
+
+On test pour 512 particules elapsed time: 0.00089344s
+
+On test pour 1024 particules elapsed time: 0.0018121s
+
+On test pour 2048 particules elapsed time: 0.00400647s
+
+On test pour 4096 particules elapsed time: 0.00841095s
+
+TESTS SET : 
+On test pour 16 particules elapsed time: 3.6855e-05s
+
+On test pour 32 particules elapsed time: 8.3687e-05s
+
+On test pour 64 particules elapsed time: 0.000136154s
+
+On test pour 128 particules elapsed time: 0.000306995s
+
+On test pour 256 particules elapsed time: 0.000617271s
+
+On test pour 512 particules elapsed time: 0.00122876s
+
+On test pour 1024 particules elapsed time: 0.00254671s
+
+On test pour 2048 particules elapsed time: 0.00506765s
+
+On test pour 4096 particules elapsed time: 0.0154782s
+
+TESTS DEQUE : 
+On test pour 16 particules elapsed time: 4.0188e-05s
+
+On test pour 32 particules elapsed time: 5.0197e-05s
+
+On test pour 64 particules elapsed time: 0.000112436s
+
+On test pour 128 particules elapsed time: 0.000206651s
+
+On test pour 256 particules elapsed time: 0.000453246s
+
+On test pour 512 particules elapsed time: 0.00135347s
+
+On test pour 1024 particules elapsed time: 0.0027868s
+
+On test pour 2048 particules elapsed time: 0.00373557s
+
+On test pour 4096 particules elapsed time: 0.00658493s
+
+TESTS VECTOR : 
+On test pour 16 particules elapsed time: 3.0262e-05s
+
+On test pour 32 particules elapsed time: 7.3672e-05s
+
+On test pour 64 particules elapsed time: 9.8443e-05s
+
+On test pour 128 particules elapsed time: 0.000224002s
+
+On test pour 256 particules elapsed time: 0.00043543s
+
+On test pour 512 particules elapsed time: 0.00089434s
+
+On test pour 1024 particules elapsed time: 0.00245657s
+
+On test pour 2048 particules elapsed time: 0.00592248s
+
+On test pour 4096 particules elapsed time: 0.0108954s
+
+
+ QUESTION 5 
+
+t = 0 
+Particules dans la liste:
+Soleil: (0, 0)
+
+
+Terre: (0, 1)
+
+
+Jupiter: (0, 5.36)
+
+
+Hailey: (34.75, 0)
+
+
+Fin
